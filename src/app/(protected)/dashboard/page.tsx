@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 interface DashboardProps {}
 
 const Dashboard: FC<DashboardProps> = () => {
