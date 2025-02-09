@@ -16,15 +16,10 @@ const LoginPage: FC<LoginPageProps> = () => {
     console.log("res", res);
   };
 
-  const handleLogout = async () => {
-    signOut();
-  };
-
   return (
-    <div>
-      <h1>Login</h1>
-      <Button onClick={handleLogin}>login</Button><br />
-      <Button onClick={handleLogout}>Logout</Button>
+    <div className="w-full text-center mt-10">
+      <h1 className="mb-5 font-bold text-2xl">Login Page</h1>
+      <Button onClick={handleLogin}>login</Button>
     </div>
   );
 };

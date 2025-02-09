@@ -1,7 +1,8 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import type { NextAuthOptions } from "next-auth";
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -9,12 +10,8 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials?: Record<"email" | "password", string>) {
-        if (!credentials?.email || !credentials?.password) return null;
-
-        // Replace this with your backend authentication logic
-        const user = { id: "1", name: "Sadegh", email: credentials.email };
-
+      async authorize(credentials) {
+        const user = { id: "1", name: "Sadegh", email: credentials?.email };
         if (user) {
           return user;
         }
@@ -33,13 +30,11 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.id as string;
-      }
+      session.user.id = token.id as string;
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET as string,
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
