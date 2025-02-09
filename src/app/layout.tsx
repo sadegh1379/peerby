@@ -26,6 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Link to the manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        {/* Theme color */}
+        <meta name="theme-color" content="#000000" />
+        {/* Favicon links */}
+        <link rel="icon" href="/assets/icons/icon512_rounded" />
+        <link rel="icon" href="/assets/icons/icon512_rounded" sizes="512x512" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <SessionProvider>{children}</SessionProvider>
