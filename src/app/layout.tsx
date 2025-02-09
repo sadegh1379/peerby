@@ -32,8 +32,8 @@ export default function RootLayout({
         {/* Theme color */}
         <meta name="theme-color" content="#000000" />
         {/* Favicon links */}
-        <link rel="icon" href="/assets/icons/icon512_rounded" />
-        <link rel="icon" href="/assets/icons/icon512_rounded" sizes="512x512" />
+        <link rel="icon" href="/assets/icons/icon512_rounded.png" />
+        <link rel="icon" href="/assets/icons/icon512_rounded.png" sizes="512x512" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
