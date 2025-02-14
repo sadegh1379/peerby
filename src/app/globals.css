@@ -4,15 +4,15 @@
 
 /* fonts */
 @font-face {
-  font-family: 'IranSans';
-  src: url('/assets/fonts/vazir-matn.ttf') format('truetype');
+  font-family: "IranSans";
+  src: url("/assets/fonts/vazir-matn.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-
 body {
   font-family: "IranSans";
+  direction: rtl;
 }
 
 @layer base {
@@ -79,6 +79,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
-
-

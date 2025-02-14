@@ -1,19 +1,21 @@
 "use client";
-
+import { LoginModal } from "@/components/customize";
 import { Button } from "@/components/ui/button";
-import { SplashScreen } from "@/components/ui/splash-screen";
-import { Moon, Search, Sun, User, UserRound } from "lucide-react";
+import { useModal } from "@/hooks";
+import { Moon, Search, Sun, UserRound } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 const HomePage = () => {
   const { setTheme, theme } = useTheme();
+  const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
+
 
 
   const changeThemeHandler = (theme: 'light' | 'dark') => {
     setTheme(theme)
   }
+
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
       {/* <SplashScreen/> */}
@@ -34,7 +36,7 @@ const HomePage = () => {
             </div>
             {/* login profile */}
             <div className="flex items-center gap-2">
-              <UserRound strokeWidth={3} size={20} />
+              <UserRound onClick={openLoginModal} className="cursor-pointer" strokeWidth={3} size={20} />
               {theme === "dark" ?
                 <Sun className="cursor-pointer" onClick={() => changeThemeHandler('light')} />
                 : <Moon className="cursor-pointer" onClick={() => changeThemeHandler('dark')} />}
@@ -51,6 +53,8 @@ const HomePage = () => {
 
         </div>
       </div>
+       <LoginModal isOpen={isOpenLoginModal} onClose={closeLoginModal}/>
+
     </div>
   );
 };

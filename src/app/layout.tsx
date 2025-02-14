@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import SessionProvider from "@/providers/session-provider";
+import DirectionProvider from "@/providers/direction-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +26,11 @@ export default function RootLayout({
         <link rel="icon" href="/assets/icons/icon512_rounded.png" sizes="512x512" />
       </head>
       <body className={`antialiased`} style={{ fontFamily: "IranSans" }}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <SessionProvider>{children}</SessionProvider>
-        </ThemeProvider>
+        <DirectionProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <SessionProvider>{children}</SessionProvider>
+          </ThemeProvider>
+        </DirectionProvider>
       </body>
     </html>
   );
