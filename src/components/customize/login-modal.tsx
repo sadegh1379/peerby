@@ -36,7 +36,7 @@ const LoginModal: FC<LoginModalProps> = ({ onClose, isOpen }) => {
           <Input ref={usernameRef} inputMode="decimal" type="text" id="username" placeholder="شماره موبایل خود را وارد کنید" />
         </div>
         <DialogFooter>
-          <Button onClick={sendOtpHandler} type="submit" className="w-full">
+          <Button isLoading={isLoading} onClick={sendOtpHandler} type="submit" className="w-full">
             ارسال کد
           </Button>
         </DialogFooter>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import BeatLoader from "react-spinners/BeatLoader";
 
 import { cn } from "@/lib/utils";
 
@@ -34,14 +35,20 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  isLoading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, children, isLoading = false, onClick, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
+    const onClickHandler = isLoading ? () => {} : onClick;
     return (
-      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
-        {children}
+      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} onClick={onClickHandler} {...props}>
+        {isLoading ? (
+          <BeatLoader color="#077a41" size={10} aria-label="Loading Spinner" data-testid="loader" />
+        ) : (
+          children
+        )}
       </Comp>
     );
   }
