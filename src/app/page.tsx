@@ -10,8 +10,6 @@ const HomePage = () => {
   const { setTheme, theme } = useTheme();
   const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
 
-
-
   const changeThemeHandler = (theme: 'light' | 'dark') => {
     setTheme(theme)
   }
@@ -53,6 +51,8 @@ const HomePage = () => {
 
         </div>
       </div>
+
+      {/* login modal */}
        <LoginModal isOpen={isOpenLoginModal} onClose={closeLoginModal}/>
 
     </div>
