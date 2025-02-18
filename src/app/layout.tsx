@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
 import SessionProvider from "@/providers/session-provider";
 import DirectionProvider from "@/providers/direction-provider";
+import ToastifyProvider from "@/providers/toastify-provider";
+import StoreProvider from "@/providers/store-provider";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,18 +19,18 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <head>
-        {/* Link to the manifest */}
         <link rel="manifest" href="/manifest.json" />
-        {/* Theme color */}
         <meta name="theme-color" content="#000000" />
-        {/* Favicon links */}
         <link rel="icon" href="/assets/icons/icon512_rounded.png" />
         <link rel="icon" href="/assets/icons/icon512_rounded.png" sizes="512x512" />
       </head>
       <body className={`antialiased`} style={{ fontFamily: "IranSans" }}>
         <DirectionProvider>
+          <ToastifyProvider />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <SessionProvider>{children}</SessionProvider>
+            <SessionProvider>
+              <StoreProvider>{children}</StoreProvider>
+            </SessionProvider>
           </ThemeProvider>
         </DirectionProvider>
       </body>
