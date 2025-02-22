@@ -54,7 +54,6 @@ const HomePage = () => {
 
       {/* login modal */}
        <LoginModal isOpen={isOpenLoginModal} onClose={closeLoginModal}/>
-
     </div>
   );
 };

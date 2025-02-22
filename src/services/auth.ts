@@ -8,7 +8,10 @@ export const authApi = createApi({
     sendOtp: builder.mutation<string, Services.OtpRequest>({
       query: data => ({ url: `/auth/request-otp`, data }),
     }),
+    validateOtp: builder.mutation<Services.ValidateOtpResponse, Services.ValidateOtpRequest>({
+      query: data => ({ url: `/auth/validate-otp`, data }),
+    }),
   }),
 });
 
-export const { useSendOtpMutation } = authApi;
+export const { useSendOtpMutation, useValidateOtpMutation } = authApi;
