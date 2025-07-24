@@ -1,9 +1,9 @@
-import { globalConfig } from '@/constants/config';
 import axios, { AxiosRequestConfig } from 'axios';
 import { notify } from '../toastify';
+import { envResolver } from '@/helper/env-resolver';
 
 const axiosRequestConfig: AxiosRequestConfig = {
-  baseURL: globalConfig.baseUrl,
+  baseURL: envResolver.serverBaseUrl,
   headers: {
     'Content-Type': 'application/json'
   }

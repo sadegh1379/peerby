@@ -1,13 +1,12 @@
-import { globalConfig } from '@/constants/config';
-import { isTokenExpired } from '@/helpers/utils';
 import { RootState } from '@/store/store';
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { BaseQueryFn } from '@reduxjs/toolkit/query';
 import { AxiosError, AxiosRequestConfig } from 'axios';
 import { Session } from 'next-auth';
 import { axiosInstance } from '.';
+import { envResolver } from '@/helper/env-resolver';
 import { sessionSlice } from '@/store/slices/session';
-import { UPDATE_REASON } from '@/enums/auth';
+import { isTokenExpired } from '@/helper/utils';
 
 const axiosBaseQuery =
   ({ baseURL }: { baseURL: string }): BaseQueryFn<AxiosRequestConfig> =>
@@ -53,14 +52,14 @@ const handleTokenExpiration = async ({
   dispatch: ThunkDispatch<any, any, any>;
 }) => {
   if (session?.user.accessToken && isTokenExpired(session?.user.accessToken)) {
-    const tokenObject = await axiosInstance.get(`${globalConfig.frontURL}/api/auth/csrf`);
+    const tokenObject = await axiosInstance.get(`${envResolver.frontURL}/api/auth/csrf`);
 
     const updatedSession = (await axiosInstance.post<Session>(
-      `${globalConfig.frontURL}/api/auth/session`,
+      `${envResolver.frontURL}/api/auth/session`,
       {
         csrfToken: tokenObject?.data?.csrfToken,
         data: {
-          reason: UPDATE_REASON.ACCESS_TOKEN
+          reason: 'access-token-expired'
         }
       }
     )) as { data: Session };

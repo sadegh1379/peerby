@@ -1,17 +1,17 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
-} from "../ui/dialog";
-import { Button } from "../ui/button";
+  DialogTitle
+} from '../ui/dialog';
+import { Button } from '../ui/button';
 
 interface LoginModalProps {
-    onClose: () => void;
-    isOpen: boolean;
+  onClose: () => void;
+  isOpen: boolean;
 }
 
 const LoginModal: FC<LoginModalProps> = ({ onClose, isOpen }) => {
@@ -25,11 +25,13 @@ const LoginModal: FC<LoginModalProps> = ({ onClose, isOpen }) => {
           <h1>body</h1>
         </div>
         <DialogFooter>
-          <Button type="submit" className="w-full">Save changes</Button>
+          <Button type="submit" className="w-full" color="">
+            Save changes
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
   );
 };
 
-export {LoginModal};
+export { LoginModal };
