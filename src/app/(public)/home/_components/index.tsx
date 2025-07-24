@@ -18,10 +18,10 @@ const Home = () => {
     <div className="font-[family-name:var(--font-geist-sans)]">
       {/* <SplashScreen/> */}
       {/* header */}
-      <div className="w-full  bg-cover ">
+      <div className="w-full  bg-cover bg-green-500">
         <div className="max-w-6xl  mx-auto">
           {/* navbar */}
-          <div className="flex justify-between items-center p-3 rounded-sm rounded-ss-none rounded-se-none bg-green-400 text-white ">
+          <div className="flex justify-between items-center p-3  bg-[#00c473] text-white ">
             {/* avatar */}
             <div className="flex gap-2 items-center">
               <Image
@@ -46,21 +46,33 @@ const Home = () => {
                 strokeWidth={3}
                 size={20}
               />
-              {theme === 'dark' ? (
+              {/* {theme === 'dark' ? (
                 <Sun className="cursor-pointer" onClick={() => changeThemeHandler('light')} />
               ) : (
                 <Moon className="cursor-pointer" onClick={() => changeThemeHandler('dark')} />
-              )}
+              )} */}
             </div>
           </div>
 
           {/* body */}
-          <div className="text-center h-[70vh] p-2 sm:p-0  items-center flex flex-col justify-center gap-3">
-            <h3 className="text-3xl font-extrabold ">از طریق اشتراک گذاری وصل شوید</h3>
-            <p className="mt-3 text-lg text-muted-foreground">
-              از افراد نزدیکتان چیزهای مفید قرض دهید، قرض بگیرید و اجاره کنید
-            </p>
-            <Button className="bg-green-700 text-white mt-2">به محله خود بپیوندید</Button>
+          <div
+            className="items-center h-[700px] relative flex flex-col justify-center gap-3"
+            style={{
+              backgroundImage:
+                "url('/assets/images/ill_landing.jpg'), linear-gradient(180deg, #23b781 24.58%, #C8FFB5 68.5%, #FFE4AE 82.3%)",
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'bottom'
+            }}
+          >
+            <div className="absolute inset-0 bg-black/30 z-0" />
+            <div className="relative z-10 flex flex-col items-center">
+              <h3 className="text-3xl font-extrabold text-white">از طریق اشتراک گذاری وصل شوید</h3>
+              <p className="mt-3 text-lg text-muted-foreground text-white">
+                از افراد نزدیکتان چیزهای مفید قرض دهید، قرض بگیرید و اجاره کنید
+              </p>
+              <Button className="bg-green-700 text-white mt-2">به محله خود بپیوندید</Button>
+            </div>
           </div>
         </div>
       </div>
