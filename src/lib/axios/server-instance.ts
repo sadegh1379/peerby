@@ -1,8 +1,8 @@
-import { globalConfig } from '@/constants/config';
+import { envResolver } from '@/helper/env-resolver';
 import axios, { AxiosRequestConfig } from 'axios';
 
 const axiosRequestConfig: AxiosRequestConfig = {
-  baseURL: globalConfig.baseUrl,
+  baseURL: envResolver.serverBaseUrl,
   headers: {
     'Content-Type': 'application/json'
   }

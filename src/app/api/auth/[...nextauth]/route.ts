@@ -1,26 +1,26 @@
-import NextAuth from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
-import type { NextAuthOptions } from "next-auth";
+import NextAuth from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import type { NextAuthOptions } from 'next-auth';
 
 const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "Credentials",
+      name: 'Credentials',
       credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
+        email: { label: 'Email', type: 'email' },
+        password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials) {
-        const user = { id: "1", name: "Sadegh", email: credentials?.email };
+        const user = { id: '1', name: 'Sadegh', email: credentials?.email };
         if (user) {
           return user;
         }
         return null;
-      },
-    }),
+      }
+    })
   ],
   session: {
-    strategy: "jwt",
+    strategy: 'jwt'
   },
   callbacks: {
     async jwt({ token, user }) {
@@ -32,9 +32,9 @@ const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       session.user.id = token.id as string;
       return session;
-    },
+    }
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET
 };
 
 const handler = NextAuth(authOptions);
