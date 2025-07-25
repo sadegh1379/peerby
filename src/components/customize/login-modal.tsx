@@ -40,7 +40,7 @@ const LoginModal: FC<LoginModalProps> = ({ onClose, isOpen }) => {
         <DialogHeader>
           <DialogTitle>ورود</DialogTitle>
         </DialogHeader>
-        <div className="text-center">
+        <div className="text-center mt-3">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
@@ -54,7 +54,7 @@ const LoginModal: FC<LoginModalProps> = ({ onClose, isOpen }) => {
                         autoFocus={false}
                         type="string"
                         inputMode="numeric"
-                        placeholder="shadcn"
+                        placeholder="شماره تلفن خود را وارد کنید"
                         {...field}
                       />
                     </FormControl>
@@ -63,12 +63,18 @@ const LoginModal: FC<LoginModalProps> = ({ onClose, isOpen }) => {
                 )}
               />
               <DialogFooter>
-                <Button type="submit" className="w-full" color="">
+                <Button size="lg" type="submit" className="w-full" color="">
                   ارسال کد تایید
                 </Button>
               </DialogFooter>
             </form>
           </Form>
+
+          <hr className="my-4" />
+          <div className="text-xs">
+            هنوز حساب کاربری ندارید؟{' '}
+            <span className="text-appPink cursor-pointer">ثبت نام کنید</span>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
