@@ -21,20 +21,20 @@ const Banner: FC<BannerProps> = () => {
     <>
       <div className="">
         {/* navbar */}
-        <div className="flex justify-between items-center p-3  bg-[#00c473] text-white ">
+        <div className="flex justify-between items-center p-2  bg-green-600 text-white ">
           {/* avatar */}
           <div className="flex gap-2 items-center">
             <Image
               className="rounded-full"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               src="/assets/icons/images.png"
               alt=""
             />
             <h1 className="text-xl font-semibold hidden sm:flex">Peerby</h1>
           </div>
           {/* search box */}
-          <div className="bg-white w-[200px] sm:w-[400px] flex px-4 py-3 rounded-lg items-center ">
+          <div className="bg-white w-[200px] sm:w-[400px] flex px-4 py-2 rounded-lg items-center ">
             <Search size={20} className="text-muted-foreground" />
             <p className="text-muted-foreground ml-3 text-sm">چه چیزی میخوای?</p>
           </div>
@@ -44,7 +44,7 @@ const Banner: FC<BannerProps> = () => {
               onClick={openLoginModal}
               className="cursor-pointer"
               strokeWidth={3}
-              size={30}
+              size={25}
             />
             {/* {theme === 'dark' ? (
                 <Sun className="cursor-pointer" onClick={() => changeThemeHandler('light')} />

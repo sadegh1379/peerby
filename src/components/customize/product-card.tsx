@@ -26,18 +26,18 @@ const ProductCard: FC<ProductCardProps> = ({
       <div className="relative">
         <Image
           width={200}
-          height={250}
+          height={200}
           alt=""
           src={'https://picsum.photos/seed/picsum/200/300'}
-          className="w-full h-[250px]"
+          className="w-full h-[200px]"
         />
         <p className="absolute bottom-1 right-1 text-white text-sm">
           {freeToBorrow ? 'رایگان برای قرض گرفتن' : `${price} تومان`}
         </p>
       </div>
       <div className="p-2">
-        <p className="text-right text-lg">{title}</p>
-        <p className="text-right text-gray-400 text-sm">{description}</p>
+        <p className="text-right text-sm">{title}</p>
+        <p className="text-right text-gray-400 text-xs">{description}</p>
         <span className="flex items-center mt-5 gap-2">
           <Image
             className="rounded-full size-[30px]"
@@ -46,7 +46,7 @@ const ProductCard: FC<ProductCardProps> = ({
             height={30}
             alt=""
           />
-          <p>{userName}</p>
+          <p className="text-xs">{userName}</p>
         </span>
       </div>
     </div>

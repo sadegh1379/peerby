@@ -8,7 +8,7 @@ interface PopularProps {}
 
 const Popular: FC<PopularProps> = () => {
   return (
-    <div className="text-center pt-16 bg-background px-3">
+    <div className="text-center pt-16 bg-background p-3">
       {/* popular title */}
       <div className="flex flex-col gap-4">
         <h1 className="md:text-[32px] text-[25px] font-bold">موجود در بیش از ۵۰۰۰ محله</h1>
