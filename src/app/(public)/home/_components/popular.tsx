@@ -24,7 +24,7 @@ const Popular: FC<PopularProps> = () => {
       <div className="mt-20">
         <h1 className="md:text-[32px] text-[25px] font-bold mb-5">محصولات مشترک و پرتکرار</h1>
         <CategoryCarousel categories={CATEGORY} />
-        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4">
           <ProductCard
             image="https://picsum.photos/seed/picsum/200/300"
             price={100}

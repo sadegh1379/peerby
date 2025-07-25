@@ -21,7 +21,7 @@ const Banner: FC<BannerProps> = () => {
     <>
       <div className="">
         {/* navbar */}
-        <div className="flex justify-between items-center p-2  bg-green-600 text-white ">
+        <div className="flex justify-between items-center p-2  bg-appPink text-white ">
           {/* avatar */}
           <div className="flex gap-2 items-center">
             <Image
@@ -56,10 +56,10 @@ const Banner: FC<BannerProps> = () => {
 
         {/* body */}
         <div
-          className="items-center h-[60vh] md:h-[95vh] text-center relative flex flex-col justify-center gap-3"
+          className="items-center h-[50vh] md:h-[85vh] text-center relative flex flex-col justify-center gap-3"
           style={{
             backgroundImage:
-              "url('/assets/images/ill_landing.jpg'), linear-gradient(180deg, #23b781 24.58%, #C8FFB5 68.5%, #FFE4AE 82.3%)",
+              "url('/assets/images/ill_landing.png'), linear-gradient(180deg, #23b781 24.58%, #C8FFB5 68.5%, #FFE4AE 82.3%)",
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom'
@@ -67,13 +67,13 @@ const Banner: FC<BannerProps> = () => {
         >
           <div className="absolute inset-0 bg-black/30 z-0" />
           <div className="relative z-10 flex flex-col items-center">
-            <h3 className="md:text-[42px] text-3xl font-extrabold text-white">
+            <h3 className="md:text-[42px] text-xl font-extrabold text-white">
               از طریق اشتراک گذاری وصل شوید
             </h3>
-            <p className="md:text-xl mt-5 text-lg  text-gray-100">
+            <p className="md:text-xl mt-5 text-md  text-gray-100">
               از افراد نزدیکتان چیزهای مفید قرض دهید، قرض بگیرید و اجاره کنید
             </p>
-            <Button size="lg" className="bg-green-700 text-white mt-4">
+            <Button size="lg" className="mt-4">
               به محله خود بپیوندید
             </Button>
           </div>

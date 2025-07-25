@@ -7,7 +7,7 @@ import Popular from './popular';
 
 const Home = () => {
   return (
-    <div className="w-full bg-cover bg-green-100 ">
+    <div className="w-full bg-cover bg-appPink/10 ">
       <div className="font-[family-name:var(--font-geist-sans)]  max-w-[1100px] mx-auto">
         {/* <SplashScreen/> */}
         <Banner />

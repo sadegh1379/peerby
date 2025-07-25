@@ -2,10 +2,10 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
   return (
-    <footer className="w-full bg-gradient-to-r from-green-100 via-green-50 to-green-100 border-t mt-5 py-16 px-6 text-center text-gray-600 text-base">
+    <footer className="w-full bg-gradient-to-r from-pink-100 via-pink-50 to-pink-100 border-t mt-5 py-16 px-6 text-center text-gray-600 text-base">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex flex-col items-center md:items-start gap-4">
-          <span className="font-bold text-2xl text-green-700">پیربی</span>
+          <span className="font-bold text-2xl text-appPink">پیربی</span>
           <span className="text-lg">اشتراک‌گذاری و قرض دادن وسایل در محله شما</span>
         </div>
         <div className="flex flex-col md:items-end items-center gap-4">

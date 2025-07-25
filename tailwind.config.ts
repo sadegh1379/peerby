@@ -49,7 +49,17 @@ export default {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
-        }
+        },
+        // Custom flat colors for direct usage: bg-myColor & text-myColor
+        appOrange: '#FF6D28',
+        appGrayDark: '#F93C00',
+        appGrayLight: '#F93C00',
+        appYellow: '#FCE700',
+        appBlue: '#00F5FF',
+        appPink: '#EC0C6D',
+        appLightPink: '#FF00A4',
+        appDarkPink: '#D9004F',
+        appWhite: '#F93C00'
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -29,7 +29,7 @@ const ProductCard: FC<ProductCardProps> = ({
           height={200}
           alt=""
           src={'https://picsum.photos/seed/picsum/200/300'}
-          className="w-full h-[200px]"
+          className="w-full h-[150px] md:h-[200px] "
         />
         <p className="absolute bottom-1 right-1 text-white text-sm">
           {freeToBorrow ? 'رایگان برای قرض گرفتن' : `${price} تومان`}
