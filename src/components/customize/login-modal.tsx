@@ -8,7 +8,6 @@ import {
 } from '@components/ui/form';
 import { Input } from '@components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button } from '../ui/button';
@@ -51,7 +50,13 @@ const LoginModal: FC<LoginModalProps> = ({ onClose, isOpen }) => {
                   <FormItem>
                     <FormLabel>شماره تلفن همراه</FormLabel>
                     <FormControl>
-                      <Input type="string" inputMode="numeric" placeholder="shadcn" {...field} />
+                      <Input
+                        autoFocus={false}
+                        type="string"
+                        inputMode="numeric"
+                        placeholder="shadcn"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
