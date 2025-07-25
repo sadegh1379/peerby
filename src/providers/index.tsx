@@ -18,7 +18,7 @@ const AppProviders: FC<AppProvidersProps> = ({ children }) => {
       <StoreProvider>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
